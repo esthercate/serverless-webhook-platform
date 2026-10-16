@@ -84,23 +84,21 @@ After successful delivery, the record is updated with its delivery status.
 - **Least-privilege permissions:** IAM policies grant the functions the permissions required for their specific tasks.
 - **Input validation:** The ingestion function rejects events that do not meet the expected input format.
 
-## Project Structure
+### Project Structure
 
 ```text
 serverless-webhook-platform/
+├── src/
+│   ├── webhook_ingestion.py
+│   ├── webhook_delivery_worker.py
+│   └── README.md
 ├── screenshots/
-│   ├── 03-main-queue-dlq-configured.png
-│   ├── 13-worker-sqs-trigger.png
-│   ├── 20-automatic-webhook-delivery.png
-│   ├── 21-dead-letter-queue-captures-failed-message.png
-│   ├── 29-dynamodb-event-record-created.png
-│   └── 31-dynamodb-event-delivered.png
+│   └── Architecture and testing screenshots
+├── .gitignore
 └── README.md
 ```
 
-The `screenshots/` directory contains redacted evidence of the AWS configuration and test results. The README documents the architecture, technology choices, and implementation.
-
-The Lambda function source code is currently maintained in the AWS Lambda console. It can be added to this repository as separate Python files to make the project easier to reproduce and maintain.
+The `src/` directory contains the Python source code for the ingestion and delivery worker Lambda functions. The `screenshots/` directory contains redacted screenshots documenting the AWS configuration and testing process.
 
 ## Setup and Configuration
 
